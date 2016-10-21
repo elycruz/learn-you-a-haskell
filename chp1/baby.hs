@@ -8,3 +8,18 @@ boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x ]
 length' xs = sum [ 1 | _ <- xs ]
 removeNonUpperCase str = [ char | char <- str, elem char ['A'..'Z'] ]
 
+removeNonUpperCase' :: [Char] -> [Char]
+removeNonUpperCase' st = [ c | c <- st, elem c ['A'..'Z']]
+addThree :: Int -> Int -> Int -> Int
+addThree x y z = x + y + z
+
+factorial :: Integer -> Integer
+factorial n = product [1..n]
+
+circumference :: Float -> Float
+circumference r = 2 * pi * r
+
+circum' :: Double -> Double
+circum' r = 2 * pi * r
+
+
