@@ -11,3 +11,7 @@ divideByTen = (/10)
 isUpperAlnum :: Char -> Bool
 isUpperAlnum = (`elem` ['A'..'Z'])
 
+-- Higher order functions
+applyTwice :: (a -> a) -> a -> a
+applyTwice f x = f (f x)
+
