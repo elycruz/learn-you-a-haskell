@@ -2,6 +2,6 @@
 import Data.List
 
 numUniques :: (Eq a) => [a] -> Int
-numUniques = length . numb
+numUniques = length . nub
 
 

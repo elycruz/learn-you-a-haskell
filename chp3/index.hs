@@ -16,7 +16,6 @@ addVectors :: (Double, Double) -> (Double, Double) -> (Double, Double)
 addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
 
 head' :: [a] -> a
-
 head' [] = error "Can't call head on an empty list, dummy!"
 head' (x:_) = x
 
@@ -59,9 +58,9 @@ greet "Fernando" = niceGreeting ++ "Fernando"
 greet name = badGreeting ++ name
 
 initials :: String -> String -> String
-initials firstName lastName = [f] ++ "." ++ [i] ++ "."
+initials firstName lastName = [f] ++ "." ++ [l] ++ "."
   where (f:_) = firstName
-        (i:_) = lastName
+        (l:_) = lastName
 
 calcBmis :: [(Double, Double)] -> [Double]
 calcBmis xs = [bmi w h | (w, h) <- xs]
