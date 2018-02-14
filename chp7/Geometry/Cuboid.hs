@@ -1,6 +1,7 @@
 module Geometry.Cuboid
 ( volume
 , area
+, rectangleArea
 ) where
 
 volume :: Float -> Float -> Float -> Float

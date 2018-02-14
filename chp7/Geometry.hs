@@ -3,15 +3,22 @@ module Geometry
 , sphereArea
 , cubeVolume
 , cubeArea
-, cuboidAra
+, cuboidArea
 , cuboidVolume
-)
+, Sphere
+, Cuboid
+, Cube
+) where
+
+import qualified Geometry.Sphere    as Sphere
+import qualified Geometry.Cube      as Cube
+import qualified Geometry.Cuboid    as Cuboid
 
 sphereVolume :: Float -> Float
-sphereVolume =
+sphereVolume radius = Sphere.volume radius
 
 sphereArea :: Float -> Float
-sphereArea radius = 4 * pi * (radius ^ 2)
+sphereArea radius = Sphere.area radius
 
 cubeVolume :: Float -> Float
 cubeVolume side = cuboidVolume side side side
@@ -20,11 +27,10 @@ cubeArea :: Float -> Float
 cubeArea side = cuboidArea side side side
 
 cuboidVolume :: Float -> Float -> Float -> Float
-cuboidVolume a b c = rectangleArea a b * c
+cuboidVolume a b c = Cuboid.volume a b c
 
 cuboidArea :: Float -> Float -> Float -> Float
-cuboidArea a b c = rA a b * 2 + rA a c * 2 + rA c b * 2
-  where rA = rectangleArea
+cuboidArea a b c = Cuboid.area a b c
 
 rectangleArea :: Float -> Float -> Float
-rectangleArea a b = a * b
+rectangleArea a b = Cuboid.rectangleArea a b
