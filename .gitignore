@@ -1,4 +1,6 @@
 *.hi
 *.o
 .idea
-
+.stack-work/
+learn-you-a-haskell.cabal
+*~
