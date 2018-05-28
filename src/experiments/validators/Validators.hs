@@ -1,8 +1,3 @@
-module Validators (ValidationResult) where
+module Validators ( ValidationResult ) where
 
-data ValidationResult = ValidationResult {
-    result :: Bool,
-    messages :: [String]
-}
-  deriving Show
-
+data ValidationResult = ValidationResult Bool [String] deriving Show
