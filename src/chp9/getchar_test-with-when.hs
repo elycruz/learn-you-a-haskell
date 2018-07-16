@@ -5,4 +5,3 @@ main = do
   when (c /= ' ') $ do
     putChar c
     main
-

@@ -4,8 +4,8 @@ main = do
     then return ()
     else do
       putStrLn $ reverseWords line
-      let a = "hell"
-          b = "yea"
+      let a = "Good"
+          b = "job!"
       putStrLn $ a ++ b
       main
 

@@ -8,6 +8,6 @@ Validator :: a -> ValidationResult
 ValidatorMessage :: String
 ValidatorMessages :: [String]
 ValidatorMessageFunc :: ValidatorOptions -> ValueToValidate
-ValidationResult :: {result :: bool, messages :: [String]}
-
-
+ValidationResult :: {
+    result :: bool, messages :: [String]
+    }

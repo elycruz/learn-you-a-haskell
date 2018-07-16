@@ -5,5 +5,3 @@ main = do
     putStrLn "Hello, what is your name?" 
     name <- getLine
     putStrLn $ "Read this carefully, because this is your future: " ++ tellFortune name 
-
-
