@@ -1,3 +1,5 @@
+-- Reverse incoming text
+
 main = do
   line <- getLine
   if null line
@@ -5,9 +7,9 @@ main = do
     else do
       putStrLn $ reverseWords line
       let a = "Good"
-          b = "job!"
+          b = " job!"
       putStrLn $ a ++ b
       main
 
 reverseWords :: String -> String
-reverseWords = unwords . map reverse . words
+reverseWords = unwords . (map reverse) . words

@@ -1,1 +1,1 @@
-main = do putStrLn $ concat $ [ show a ++ " " | a <- [0,1..1597]]
+main = do putStrLn $ concat $ [ " . " | a <- [0,1..1597]]
