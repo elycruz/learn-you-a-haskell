@@ -4,3 +4,4 @@
 .stack-work/
 learn-you-a-haskell.cabal
 *~
+*.exe
