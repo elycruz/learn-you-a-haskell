@@ -1,4 +1,5 @@
 import System.IO
+import System.IO.Error
 import System.Directory
 import System.Environment
 import Data.List
@@ -14,7 +15,11 @@ main :: IO ()
 main = do
     (command:args) <- getArgs
     let (Just action) = lookup command dispatch
-    action args
+        filePath = args !! 0
+    existsBool <- (doesFileExist filePath)
+    if not existsBool
+    then putStrLn $ concat ["File path is not reachable.  File path: \"", filePath, "\""]
+    else (action args) `catchIOError` errorHandler
 
 workDir :: String
 workDir = "../../assets/"
@@ -48,3 +53,11 @@ renderTasks :: [String] -> IO ()
 renderTasks tasks = do
     putStrLn "Todo Items:"
     putStr $ unlines . numberTasks $ tasks
+
+errorHandler :: IOError -> IO ()
+errorHandler e
+    | isDoesNotExistError e =
+        case ioeGetFileName e of
+            Just filePath -> putStrLn $ "File is unreachable.  File: " ++ filePath
+            Nothing -> putStrLn "An unknown error occurred while trying to access todo file (check given path)."
+    | otherwise = ioError e
